@@ -60,7 +60,8 @@ app.component('news-list', {
         <input type="search" name="search" v-model="searchTerm"
 id="search" class="form-control mb-2 mr-sm-2" placeholder="Enter
 search term here" />
-        <p>You are searching for {{ searchTerm }}</p>
+        
+        <button class="btn btn-primary mb-2" @click="searchNews">Search</button>
       </div>
     </div>
     <div class="news">
@@ -95,8 +96,25 @@ search term here" />
       articles: [],
       searchTerm: ''
     }
+  },
+  methods: {
+    searchNews() {
+      let self = this;
+      fetch('https://newsapi.org/v2/everything?q='+
+        self.searchTerm + '&language=en', {
+        headers: {
+          'Authorization': 'Bearer '
+        }
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+        self.articles = data.articles;
+      });
+    }
   }
-
 
 })
 
