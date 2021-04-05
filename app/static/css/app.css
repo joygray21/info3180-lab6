@@ -5,3 +5,16 @@ body {
 footer  {
     padding-top: 20px;
 }
+
+img{
+    height: 250px;
+    width: 350px;
+}
+ul{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto auto auto;
+}
+li{
+	grid-column: auto;
+}
