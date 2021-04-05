@@ -62,7 +62,21 @@ app.component('news-list', {
         <li class="news__item">News item 3</li>
       </ul>
     </div>
-  `
+  `,
+  created(){
+    fetch('https://newsapi.org/v2/top-headlines?country=us', {
+      headers: {
+        'Authorization': 'Bearer <your-api-token>'
+      }
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+    });
+  }
+
 
 })
 
