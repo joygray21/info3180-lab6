@@ -23,7 +23,7 @@ def index(path):
 
     Also we will render the initial webpage and then let VueJS take control.
     """
-    return app.send_static_file('index.html')
+    return app.send_static_file('index.html') #see explanation in lab file
 
 
 ###

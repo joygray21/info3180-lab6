@@ -51,4 +51,19 @@ app.component('app-footer', {
   }
 })
 
+app.component('news-list', {
+  name: 'NewsList',
+  template: `
+    <div class="news">
+      <h2>News</h2>
+      <ul class="news__list">
+        <li class="news__item">News item 1</li>
+        <li class="news__item">News item 2</li>
+        <li class="news__item">News item 3</li>
+      </ul>
+    </div>
+  `
+
+})
+
 app.mount('#app');
