@@ -17,9 +17,11 @@ search term here" />
       <h2>News</h2>
       <ul class="news__list">
         <li v-for="article in articles" class="news__item">
+            <div class="title"> 
             {{ article.title }}
-            {{ article.description }}
+            </div>
             <img :src='article.urlToImage'>
+            {{ article.description }}            
         </li>
       </ul>
     </div>
